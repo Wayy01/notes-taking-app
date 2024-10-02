@@ -12,7 +12,7 @@ document.getElementById('authForm').addEventListener('submit', function() {
         } else {
             if (existingUser.password === password) {
             sessionStorage.setItem('currentUser', JSON.stringify(existingUser));
-            window.location.href = '/notes.html';
+            window.location.href = 'notes.html';
             }
         }
     }
