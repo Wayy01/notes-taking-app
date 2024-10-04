@@ -31,7 +31,7 @@ function loadNoteContent(noteId) {
     if (note) {
         const mainContent = document.getElementById('mainContent');
         mainContent.innerHTML = `
-            <div class="toolbar mb-4 flex gap-4">
+            <div class="toolbar mb-4">
                 <button onclick="document.execCommand('bold');" title="Bold">B</button>
                 <button onclick="document.execCommand('italic');" title="Italic">I</button>
                 <button onclick="document.execCommand('underline');" title="Underline">U</button>
@@ -45,7 +45,7 @@ function loadNoteContent(noteId) {
             </div>
             <div class="note-content w-full overflow-hidden text-wrap">
                 <h2 contenteditable="true" class="note-title outline-none text-2xl font-bold" data-note-id="${note.id}">${note.title}</h2>
-                <div contenteditable="true" class="note-content-editable mt-4 w-full h-full resize-none outline-none" data-note-id="${note.id}">${note.content}</div>
+                <div contenteditable="true" class="note-content-editable mt-4 w-full h-full resize-none outline-none" data-note-id="${note.id}">${note.styledContent}</div>
             </div>
         `;
 
@@ -59,11 +59,12 @@ function loadNoteContent(noteId) {
         });
 
         contentElement.addEventListener('input', () => {
-            note.content = contentElement.textContent;
+            note.styledContent = contentElement.innerHTML; // Update to save styled content
             saveNotes();
         });
     }
 }
+
 
 function updateNoteTitleInSidebar(noteId, newTitle) {
     const noteListMain = document.getElementById('noteList');
