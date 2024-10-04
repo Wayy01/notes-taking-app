@@ -15,6 +15,24 @@
             --accent-color: #5e63ff;
             --second-text-color: #b0b3c1;
         }
+        .toolbar {
+    display: flex;
+    gap: 10px;
+}
+
+.toolbar button {
+    padding: 5px 10px;
+    background-color: var(--accent-color);
+    color: var(--text-color);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.toolbar button:hover {
+    background-color: var(--hover-color);
+}
+
     </style>
 </head>
 <body class="min-h-screen bg-[var(--base-color)] text-[var(--text-color)] grid grid-cols-[auto_1fr]">
@@ -25,7 +43,7 @@
         <ul class="list-none" id="noteList">
         </ul>
     </nav>
-    <main id="mainContent" class="w-full h-full flex pl-10 pt-6 outline-none text-wrap">
+    <main id="mainContent" class="w-full h-full flex flex-col pl-10 pt-6 outline-none text-wrap">
     </main>
 </body>
 </html>
