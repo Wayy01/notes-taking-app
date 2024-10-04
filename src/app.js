@@ -26,17 +26,29 @@ function createNoteElement(id, title) {
 
     return li;
 }
-
 function loadNoteContent(noteId) {
     const note = notes.find(note => note.id === noteId);
     if (note) {
         const mainContent = document.getElementById('mainContent');
         mainContent.innerHTML = `
+            <div class="toolbar mb-4">
+                <button onclick="document.execCommand('bold');" title="Bold">B</button>
+                <button onclick="document.execCommand('italic');" title="Italic">I</button>
+                <button onclick="document.execCommand('underline');" title="Underline">U</button>
+                <button onclick="document.execCommand('strikeThrough');" title="Strike">S</button>
+                <button onclick="document.execCommand('justifyLeft');" title="Align Left">Left</button>
+                <button onclick="document.execCommand('justifyCenter');" title="Align Center">Center</button>
+                <button onclick="document.execCommand('justifyRight');" title="Align Right">Right</button>
+                <button onclick="document.execCommand('insertOrderedList');" title="Ordered List">OL</button>
+                <button onclick="document.execCommand('insertUnorderedList');" title="Unordered List">UL</button>
+                <button onclick="document.execCommand('createLink', false, prompt('Enter URL:', 'http://'));" title="Link">Link</button>
+            </div>
             <div class="note-content w-full overflow-hidden text-wrap">
                 <h2 contenteditable="true" class="note-title outline-none text-2xl font-bold" data-note-id="${note.id}">${note.title}</h2>
                 <div contenteditable="true" class="note-content-editable mt-4 w-full h-full resize-none outline-none" data-note-id="${note.id}">${note.content}</div>
             </div>
         `;
+
         const titleElement = mainContent.querySelector('.note-title');
         const contentElement = mainContent.querySelector('.note-content-editable');
 
