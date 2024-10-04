@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes app</title>
+    <link rel="stylesheet" href="/src/output.css">
+    <script src="/src/app.js" defer></script>
+    <style>
+        :root {
+            --base-color: #11121a;
+            --line-color: #42434a;
+            --hover-color: #222533;
+            --text-color: #e6e6ef;
+            --accent-color: #5e63ff;
+            --second-text-color: #b0b3c1;
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-[var(--base-color)] text-[var(--text-color)] grid grid-cols-[auto_1fr]">
+    <nav id="sidebar" class="h-screen w-[180px] p-5 bg-[var(--base-color)] border-r border-[var(--line-color)] sticky top-0 transition-all duration-300 overflow-hidden">
+        <div class="flex justify-start mb-4">
+            <span class="font-semibold text-2xl logo">Notes App</span>
+        </div>
+        <ul class="list-none" id="noteList">
+        </ul>
+    </nav>
+    <main id="mainContent" class="w-full h-full flex pl-10 pt-6 outline-none text-wrap">
+    </main>
+</body>
+</html>
