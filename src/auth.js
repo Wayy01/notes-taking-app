@@ -14,7 +14,7 @@ document.getElementById('authForm').addEventListener('submit', function(event) {
         } else {
             if (existingUser.password === password) {
             sessionStorage.setItem('currentUser', JSON.stringify(existingUser));
-            window.location.href = '../pages/notes.html';
+            window.location.href = './pages/notes.html';
             }
         }
     }
