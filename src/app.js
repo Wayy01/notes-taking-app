@@ -80,6 +80,7 @@ function addNewNote() {
         id: Date.now().toString(),
         title: 'New Note',
         content: 'Type here...',
+        styledContent: '<p>Type here...</p>',
         email: currentUser.email
     };
 
