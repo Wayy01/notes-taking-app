@@ -65,6 +65,16 @@ function loadNoteContent(noteId) {
     }
 }
 
+function updateNoteTitleInSidebar(noteId, newTitle) {
+    const noteListMain = document.getElementById('noteList');
+    const noteItem = Array.from(noteListMain.children).find(li => li.dataset.noteId === noteId);
+    
+    if (noteItem) {
+        const titleElement = noteItem.querySelector('.note-title');
+        titleElement.textContent = newTitle;
+    }
+}
+
 function addNewNote() {
     const newNote = {
         id: Date.now().toString(),
