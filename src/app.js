@@ -31,7 +31,7 @@ function loadNoteContent(noteId) {
     if (note) {
         const mainContent = document.getElementById('mainContent');
         mainContent.innerHTML = `
-            <div class="toolbar mb-4 flex gap-2">
+            <div class="toolbar mb-4 flex gap-4">
                 <button onclick="document.execCommand('bold');" title="Bold">B</button>
                 <button onclick="document.execCommand('italic');" title="Italic">I</button>
                 <button onclick="document.execCommand('underline');" title="Underline">U</button>
