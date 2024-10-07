@@ -39,9 +39,8 @@ function loadNoteContent(noteId) {
                 <button onclick="document.execCommand('justifyLeft');" title="Align Left">Left</button>
                 <button onclick="document.execCommand('justifyCenter');" title="Align Center">Center</button>
                 <button onclick="document.execCommand('justifyRight');" title="Align Right">Right</button>
-                <button onclick="document.execCommand('insertOrderedList');" title="Ordered List">OL</button>
+                <button onclick="document.execCommand('insertOrderedList')"; title="Ordered List">OL</button>
                 <button onclick="document.execCommand('insertUnorderedList');" title="Unordered List">UL</button>
-                <button onclick="document.execCommand('createLink', false, prompt('Enter URL:', 'http://'));" title="Link">Link</button>
             </div>
             <div class="note-content w-full overflow-hidden text-wrap">
                 <h2 contenteditable="true" class="note-title outline-none text-2xl font-bold" data-note-id="${note.id}">${note.title}</h2>
@@ -59,7 +58,7 @@ function loadNoteContent(noteId) {
         });
 
         contentElement.addEventListener('input', () => {
-            note.styledContent = contentElement.innerHTML; // Update to save styled content
+            note.styledContent = contentElement.innerHTML;
             saveNotes();
         });
     }
@@ -69,7 +68,7 @@ function loadNoteContent(noteId) {
 function updateNoteTitleInSidebar(noteId, newTitle) {
     const noteListMain = document.getElementById('noteList');
     const noteItem = Array.from(noteListMain.children).find(li => li.dataset.noteId === noteId);
-    
+
     if (noteItem) {
         const titleElement = noteItem.querySelector('.note-title');
         titleElement.textContent = newTitle;
